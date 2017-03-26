@@ -22,4 +22,6 @@ public interface Uczestnik {
      * @return wartość od 0 do 1
      */
     double predkoscPoruszaniaSie(RodzajTerenu rodzajTerenu);
+
+    boolean rozwiazZadanie(DziedzinaZadania dziedzinaZadania);
 }

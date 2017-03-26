@@ -111,6 +111,19 @@ public class BiegPoLesie {
                 liczbaUczestnikow++;
             }
         }
+        if (et instanceof Zadanie) {
+            Zadanie zadanie = (Zadanie) et;
+            for (Uczestnik uczestnik : zadanie.getUczestnicy()) {
+                komentator.relacjonuj(indeksElementuTrasy + 1, uczestnik, zadanie.getDziedzinaZadania());
+                boolean wynik = uczestnik.rozwiazZadanie(zadanie.getDziedzinaZadania());
+                if (wynik) {
+                    doUsuniecia.add(uczestnik);
+                    umiescUczestnikaWElemencieTrasy(uczestnik, indeksElementuTrasy + 1);
+                } else {
+                    zadanie.getUczestnicyWZadaniu().put(uczestnik, wynik);
+                }
+            }
+        }
 
         for (Uczestnik u : doUsuniecia) {
             et.usunUczestnika(u);

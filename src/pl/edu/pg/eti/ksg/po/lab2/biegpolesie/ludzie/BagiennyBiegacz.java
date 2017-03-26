@@ -1,7 +1,10 @@
 package pl.edu.pg.eti.ksg.po.lab2.biegpolesie.ludzie;
 
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.Czlowiek;
+import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.DziedzinaZadania;
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.RodzajTerenu;
+
+import java.util.Random;
 
 /**
  * @author TB

@@ -1,7 +1,10 @@
 package pl.edu.pg.eti.ksg.po.lab2.biegpolesie.roboty;
 
+import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.DziedzinaZadania;
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.Robot;
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.RodzajTerenu;
+
+import java.util.Random;
 
 /**
  * @author TB
@@ -33,6 +36,14 @@ public class RobotMobilny extends Robot {
                 komunikuj("Awaria silników!");
                 return czynnikiLosowe.nextDouble() * 0.1; //Od 0.0 do 0.1
         }
+    }
+
+    @Override
+    public boolean rozwiazZadanie(DziedzinaZadania dziedzinaZadania) {
+        Random generator = new Random();
+        double liczba = generator.nextDouble();
+        if (liczba < 0.05) return true;
+        return false;
     }
 
 }

@@ -90,6 +90,12 @@ class Komentator {
         mow(slowo_uczestnik + " " + u + " przemierza teraz " + rt + ". Element nr " + nrElementu + " trasy.");
     }
 
+    public void relacjonuj(int nrElementu, Uczestnik uczestnik, DziedzinaZadania dziedzinaZadania) {
+        String slowo_uczestnik = odmienUczestnik(uczestnik);
+        slowo_uczestnik = slowo_uczestnik.substring(0, 1).toUpperCase() + slowo_uczestnik.substring(1);
+        mow(slowo_uczestnik + " " + uczestnik + " zmaga się z zadaniem " + dziedzinaZadania + ". Element nr " + nrElementu + " trasy.");
+    }
+
 
     private String odmienUczestnik(Uczestnik u) {
         String slowo_uczestnik = "uczestnik";

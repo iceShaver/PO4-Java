@@ -90,4 +90,13 @@ public abstract class Czlowiek implements Uczestnik {
                 return humorIUwarunkowaniaOsobiste.nextDouble() * 0.2; //Od 0 do 0.2
         }
     }
+
+    @Override
+    public boolean rozwiazZadanie(DziedzinaZadania dziedzinaZadania) {
+        Random generator = new Random();
+        double liczba = generator.nextDouble();
+        if (liczba < 0.1) return true;
+        return false;
+
+    }
 }
