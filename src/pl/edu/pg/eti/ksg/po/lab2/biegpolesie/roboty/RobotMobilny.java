@@ -40,10 +40,8 @@ public class RobotMobilny extends Robot {
 
     @Override
     public boolean rozwiazZadanie(DziedzinaZadania dziedzinaZadania) {
-        Random generator = new Random();
-        double liczba = generator.nextDouble();
-        if (liczba < 0.05) return true;
-        return false;
+        komunikuj("Rozwiązuję zadanie " + dziedzinaZadania);
+        this.prawdopodoienstwoRozwiazaniaZadania = 0.05;
+        return super.rozwiazZadanie(dziedzinaZadania);
     }
-
 }

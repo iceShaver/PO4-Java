@@ -12,7 +12,9 @@ class Komentator {
         this.mikrofon = mikrofon;
     }
 
-
+    public void powiadomMeta(Uczestnik u) {
+        mow("!!!!!!!!!!!!!!!Uczestnik " + u + " zakończył bieg!!!!!!!!!!!!!!!!!!!!");
+    }
     private void mow(String tresc) {
         mikrofon.print("KOMENTATOR: ");
         mikrofon.println(tresc);

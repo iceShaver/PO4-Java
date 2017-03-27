@@ -8,7 +8,11 @@ import java.util.Set;
 
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.*;
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.ludzie.BagiennyBiegacz;
+import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.ludzie.Student;
+import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.ludzie.StudentPolitechniki;
+import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.ludzie.StudentWETI;
 import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.roboty.RobotMobilny;
+import pl.edu.pg.eti.ksg.po.lab2.biegpolesie.roboty.Terminator;
 
 /**
  * @author TB
@@ -23,7 +27,9 @@ public class Javalab2 {
         Set<Uczestnik> uczestnicy = new HashSet<>();
         uczestnicy.add(new BagiennyBiegacz("Krzysztof", "Kowalski", Czlowiek.Plec.MEZCZYZNA));
         uczestnicy.add(new RobotMobilny(1));
-
+        uczestnicy.add(new StudentWETI("Kamil", "Królikowski", Czlowiek.Plec.MEZCZYZNA, DziedzinaZadania.INFORMATYKA));
+        uczestnicy.add(new Terminator(101));
+        uczestnicy.add(new StudentPolitechniki("Jan", "Kowalski", Czlowiek.Plec.MEZCZYZNA, DziedzinaZadania.FIZYKA));
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Witaj w aplikacji Bieg po Lesie. Wybierz bieg: ");
@@ -72,7 +78,8 @@ public class Javalab2 {
                 wlasnyBieg.dodajElementTrasy(FabrykaElementowTrasy.utworzElementTrasy(nazwa));
                 System.out.println("Pomyślnie dodano obiekt " + nazwa);
             } catch (BrakTakiegoElementuTrasyException e) {
-                e.printStackTrace();
+                System.out.println("Nie ma takiego obiektu");
+                //e.printStackTrace();
             }
         }
         return wlasnyBieg;

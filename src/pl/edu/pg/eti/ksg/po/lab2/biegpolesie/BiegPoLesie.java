@@ -84,6 +84,7 @@ public class BiegPoLesie {
         if (i < elementyTrasy.size()) {
             elementyTrasy.get(i).dodajUczestnika(u);
         } else {
+            komentator.powiadomMeta(u);
             meta.add(u);
         }
     }
@@ -110,7 +111,7 @@ public class BiegPoLesie {
                 }
                 liczbaUczestnikow++;
             }
-        }
+        } else
         if (et instanceof Zadanie) {
             Zadanie zadanie = (Zadanie) et;
             for (Uczestnik uczestnik : zadanie.getUczestnicy()) {
@@ -122,6 +123,7 @@ public class BiegPoLesie {
                 } else {
                     zadanie.getUczestnicyWZadaniu().put(uczestnik, wynik);
                 }
+                liczbaUczestnikow++;
             }
         }
 

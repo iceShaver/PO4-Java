@@ -26,7 +26,7 @@ public abstract class Czlowiek implements Uczestnik {
     private final String imie;
     private final String nazwisko;
     private final Plec plec;
-
+    protected double prawdopodoienstwoRozwiazaniaZadania;
     protected final Random humorIUwarunkowaniaOsobiste = new Random();
 
     private PrintStream osrodekKomunikacji = null;
@@ -35,6 +35,7 @@ public abstract class Czlowiek implements Uczestnik {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.plec = plec;
+        prawdopodoienstwoRozwiazaniaZadania = 0.1;
     }
 
     public String getImie() {
@@ -93,10 +94,12 @@ public abstract class Czlowiek implements Uczestnik {
 
     @Override
     public boolean rozwiazZadanie(DziedzinaZadania dziedzinaZadania) {
+        wypowiedzSie("Rozwiązuję zadanie " + dziedzinaZadania);
         Random generator = new Random();
         double liczba = generator.nextDouble();
-        if (liczba < 0.1) return true;
+        if (liczba < prawdopodoienstwoRozwiazaniaZadania) return true;
         return false;
 
     }
+
 }
